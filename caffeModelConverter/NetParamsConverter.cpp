@@ -3,12 +3,12 @@
 unsigned int NetParamsConverter::magicCode = 0x6d76636d;//mvcm
 unsigned int NetParamsConverter::version   = 0x00050004;
 #define ALIGN4(x) (((x) + 0x3) & (unsigned int) ~0x3)
-
 NetParamsConverter::NetParamsConverter(boost::shared_ptr< Net<float> > net_,const char* blobName_,bool transInput):
     net(net_),blobName(blobName_),transInput(transInput),extIdStart(32768),complexity(0)
 {
     memset(align_pads,0,4);
     buildLayerNamesIndex();
+
     const vector<shared_ptr<Layer<float> > >& layers = net->layers();
 
     layerSize=(int)layers.size();

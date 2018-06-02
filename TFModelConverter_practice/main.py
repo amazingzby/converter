@@ -11,3 +11,4 @@ for layer in tf_parser.src_graph.topological_sort:
     i=i+1
     print("Layer %s"%str(i))
     print(node_type)
+print(tf_parser)
